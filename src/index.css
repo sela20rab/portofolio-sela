@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  cursor: default;
+}
+/* ================= AUTO SCROLL MOCKUP ================= */
+
+@keyframes scrollMockup {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.mockup-scroll {
+  animation: scrollMockup 12s linear infinite;
+}
