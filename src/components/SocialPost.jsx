@@ -60,10 +60,9 @@ export default function SocialPost() {
   }, []);
 
   return (
-    <div className="w-full mt-20 space-y-28">
+    <div className="w-full mt-20 space-y-28 px-4 md:px-6">
 
       {themes.map((theme, themeIndex) => (
-
         <motion.div
           key={themeIndex}
           initial={{ opacity: 0, y: 60 }}
@@ -72,15 +71,11 @@ export default function SocialPost() {
           viewport={{ once: true }}
         >
 
-          {/* ================= BARIS UTAMA ================= */}
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             {/* LEFT */}
             <div className="flex flex-col items-center text-center">
-
-              <h3 className="text-3xl font-bold mb-8">
-                {theme.name}
-              </h3>
+              <h3 className="text-3xl font-bold mb-8">{theme.name}</h3>
 
               {/* MOCKUP */}
               <motion.div
@@ -88,93 +83,60 @@ export default function SocialPost() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-black rounded-[40px] p-4 shadow-2xl"
-                style={{ width: "400px", height: "500px" }}
+                className="bg-black rounded-3xl p-4 shadow-2xl w-full max-w-[400px] md:max-w-[450px]"
               >
-
-                <div
-                  className="bg-white rounded-[32px] w-full h-full relative overflow-hidden"
-                  style={{ aspectRatio: "1080 / 1350" }}
-                >
-
+                <div className="bg-white rounded-2xl w-full h-auto relative overflow-hidden aspect-[1080/1350]">
                   {theme.images.map((img, imgIndex) => (
                     <img
                       key={imgIndex}
                       src={img}
                       className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700"
-                      style={{
-                        opacity:
-                          imgIndex === indices[themeIndex] ? 1 : 0,
-                      }}
+                      style={{ opacity: imgIndex === indices[themeIndex] ? 1 : 0 }}
                     />
                   ))}
-
                 </div>
-
               </motion.div>
-
             </div>
 
             {/* RIGHT */}
             <div className="flex flex-col justify-center">
-
               <div className="relative mb-8">
-
                 <div className="absolute -left-3 top-0 w-1 h-full bg-gradient-to-b from-blue-400 via-purple-400 to-pink-400 rounded-full"></div>
-
-                <p className="text-gray-700 text-[15px] leading-relaxed text-justify bg-white/70 backdrop-blur-md border border-white/50 p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 max-w-xl">
+                <p className="text-gray-700 text-[15px] leading-relaxed text-justify bg-white/70 backdrop-blur-md border border-white/50 p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 max-w-full">
                   {theme.desc}
                 </p>
-
               </div>
 
               <button
-                onClick={() =>
-                  setOpenIndex(openIndex === themeIndex ? null : themeIndex)
-                }
+                onClick={() => setOpenIndex(openIndex === themeIndex ? null : themeIndex)}
                 className={`px-8 py-3 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 ${
                   openIndex === themeIndex
                     ? "bg-red-500 hover:bg-red-600"
                     : "bg-purple-600 hover:bg-purple-700"
                 }`}
               >
-                {openIndex === themeIndex
-                  ? "Tutup Design"
-                  : "Lihat Design"}
+                {openIndex === themeIndex ? "Tutup Design" : "Lihat Design"}
               </button>
-
             </div>
-
           </div>
 
           {/* ================= EXPAND DESIGN ================= */}
           {openIndex === themeIndex && (
-
-            <div className="mt-16 grid md:grid-cols-3 gap-8">
-
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {theme.images.map((img, index) => (
-
                 <motion.img
                   key={index}
                   src={img}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="rounded-3xl shadow-xl w-full hover:scale-105 transition duration-300"
-                  style={{
-                    aspectRatio: "1080 / 1350",
-                    objectFit: "cover",
-                  }}
+                  className="rounded-3xl shadow-xl w-full hover:scale-105 transition duration-300 aspect-[1080/1350] object-cover"
                 />
-
               ))}
-
             </div>
-
           )}
 
         </motion.div>
-
       ))}
 
     </div>

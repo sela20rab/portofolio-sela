@@ -3,7 +3,12 @@ import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import profile from "../assets/selablu.jpeg";
 
+// Images
 import adobe from "../assets/adobe.png";
+import figma from "../assets/figma.png";
+import canva from "../assets/canva.png";
+import corel from "../assets/corel.png";
+
 import {
   MapPin,
   Clock,
@@ -13,7 +18,6 @@ import {
 } from "lucide-react";
 
 import {
-  FaFigma,
   FaHtml5,
   FaCss3Alt,
   FaJs,
@@ -24,12 +28,8 @@ import {
 } from "react-icons/fa";
 
 import {
-  SiCanva,
-  SiCoreldraw,
   SiXampp,
 } from "react-icons/si";
-
-
 
 export default function About() {
   // Cursor glow
@@ -54,7 +54,6 @@ export default function About() {
   const [typedGrad2, setTypedGrad2] = useState("");
   const [typedPara, setTypedPara] = useState("");
 
-  // Typing logic (same as sebelumnya)
   useEffect(() => {
     let timer;
     if (typedH1.length < headingText1.length) {
@@ -119,7 +118,6 @@ export default function About() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-[#dceaf7] to-[#c7dff5] overflow-x-hidden relative">
-
       {/* Cursor Glow */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
@@ -150,59 +148,25 @@ export default function About() {
             </h1>
 
             <p className="text-gray-600 mt-6 text-lg max-w-xl leading-relaxed">{typedPara}</p>
-
-            {/* Education */}
-            <div className="mt-10">
-              <h2 className="text-3xl font-bold mb-4">Education</h2>
-              <div className="flex gap-8 items-start">
-                <p className="text-lg font-semibold">2021–2025</p>
-                <div>
-                  <p className="text-xl font-semibold">Informatics Engineering</p>
-                  <p className="text-gray-500">Politeknik TEDC Bandung</p>
-                </div>
-              </div>
-              <div className="flex gap-6 mt-4 text-gray-600 text-sm">
-                <div className="flex items-center gap-2">
-                  <MapPin size={16} className="text-purple-500" /> Ciwaruga, Bandung Barat
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock size={16} className="text-blue-500" /> Available for Freelance
-                </div>
-              </div>
-            </div>
-
-            {/* Download CV */}
-            <div className="flex gap-5 mt-10">
-              <a
-                href="https://drive.google.com/drive/folders/1yXDM8V86fFJRZNc7SrnzoETmS7jgDWxC?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-black text-white rounded-full shadow-xl hover:scale-105 transition"
-              >
-                Lihat CV ↓
-              </a>
-            </div>
           </div>
 
           {/* RIGHT IMAGE */}
-<div className="flex justify-center relative">
-  {/* Gradient Glow Background */}
-  <motion.div
-    className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-r from-pink-400 via-purple-500 to-blue-400 filter blur-3xl opacity-60"
-    variants={floating}
-    animate="animate"
-  />
-  {/* Floating Profile Image */}
-  <motion.img
-    src={profile}
-    alt="profile"
-    className="relative w-[360px] h-[360px] object-cover rounded-full border-[10px] border-transparent shadow-2xl"
-    variants={floating}
-    animate="animate"
-    whileHover={{ scale: 1.05, rotate: 3 }}
-    transition={{ type: "spring", stiffness: 120, damping: 10 }}
-  />
-</div>
+          <div className="flex justify-center relative">
+            <motion.div
+              className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-r from-pink-400 via-purple-500 to-blue-400 filter blur-3xl opacity-60"
+              variants={floating}
+              animate="animate"
+            />
+            <motion.img
+              src={profile}
+              alt="profile"
+              className="relative w-[360px] h-[360px] object-cover rounded-full border-[10px] border-transparent shadow-2xl"
+              variants={floating}
+              animate="animate"
+              whileHover={{ scale: 1.05, rotate: 3 }}
+              transition={{ type: "spring", stiffness: 120, damping: 10 }}
+            />
+          </div>
         </div>
 
         {/* TECHNICAL PROFICIENCY */}
@@ -220,13 +184,11 @@ export default function About() {
               <h3 className="text-xl font-semibold">Design Tools</h3>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <Tool icon={<FaFigma size={32} className="text-[#A259FF]" />} name="Figma" />
-              <Tool icon={<SiCanva size={32} className="text-[#00C4CC]" />} name="Canva" />
-              <Tool icon={<SiCoreldraw size={32} className="text-[#3BB54A]" />} name="CorelDraw" />
-<Tool 
-  icon={<img src={adobe} alt="Adobe Photoshop" className="w-8 h-8 mx-auto" />} 
-  name="Adobe Photoshop" 
-/>            </div>
+              <Tool icon={<img src={figma} alt="Figma" className="w-8 h-8 mx-auto" />} name="Figma" />
+              <Tool icon={<img src={canva} alt="Canva" className="w-8 h-8 mx-auto" />} name="Canva" />
+              <Tool icon={<img src={corel} alt="CorelDraw" className="w-8 h-8 mx-auto" />} name="CorelDraw" />
+              <Tool icon={<img src={adobe} alt="Adobe Photoshop" className="w-8 h-8 mx-auto" />} name="Adobe Photoshop" />
+            </div>
           </motion.div>
 
           {/* DEVELOPMENT */}
@@ -247,33 +209,6 @@ export default function About() {
               <Dev icon={<FaMicrosoft size={28} className="text-[#D83B01]" />} name="Microsoft Office" />
             </div>
           </motion.div>
-        </div>
-
-        {/* ================= CTA ================= */}
-        <div className="mt-32 rounded-[40px] bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-10 py-20 text-center relative overflow-hidden">
-          <div className="absolute -left-20 bottom-0 w-96 h-96 bg-purple-600/40 blur-[120px] rounded-full"></div>
-          <div className="absolute right-0 top-0 w-96 h-96 bg-blue-600/30 blur-[120px] rounded-full"></div>
-
-          <h2 className="text-5xl font-bold relative">
-            Let’s Create Something{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Amazing Together?
-            </span>
-          </h2>
-
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto relative">
-            I'm currently accepting new projects.
-          </p>
-
-          <div className="flex justify-center gap-8 mt-12 relative">
-            <Circle bg="bg-green-500" href="https://wa.me/6281572393990" icon={<MessageCircle />} />
-            <Circle bg="bg-blue-500" href="mailto:selapebriana30@gmail.com" icon={<Mail />} />
-            <Circle bg="bg-pink-500" href="https://www.instagram.com/selapebriana20" icon={<Instagram />} />
-          </div>
-
-          <p className="text-gray-400 text-sm mt-14 relative">
-            © 2026 Portfolio. All rights reserved.
-          </p>
         </div>
       </div>
     </div>
@@ -304,17 +239,5 @@ function Dev({ icon, name }) {
       <div className="flex justify-center mb-2">{icon}</div>
       <p className="text-sm text-gray-600 font-medium">{name}</p>
     </motion.div>
-  );
-}
-function Circle({ bg, icon, href }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${bg} w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition`}
-    >
-      {icon}
-    </a>
   );
 }

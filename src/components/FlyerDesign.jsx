@@ -11,7 +11,6 @@ import img6 from "../assets/flyer/6.png";
 
 export default function FlyerDesign() {
   const navigate = useNavigate();
-
   const images = [img1, img2, img3, img4, img5, img6];
 
   return (
@@ -26,39 +25,19 @@ export default function FlyerDesign() {
           ← Back
         </button>
 
-        <h1 className="text-4xl font-bold">
-          Flyer Design Projects
-        </h1>
+        <h1 className="text-4xl font-bold">Flyer Design Projects</h1>
 
-        {/* ================= TEKS FILE ================= */}
         <p className="text-gray-500 text-sm mt-2">
           {images.length} File Design Ditemukan
         </p>
 
-        {/* ================= MOCKUP HP ================= */}
+        {/* ================= MOCKUP FLYER ================= */}
         <div className="mt-12 flex justify-center">
-
-          {/* HP CONTAINER */}
-          <div
-            className="bg-black rounded-[40px] p-5 shadow-2xl flex items-center justify-center"
-            style={{
-              width: "450px",
-              height: "800px",
-            }}
-          >
-
-            {/* LAYAR HP */}
-            <div
-              className="bg-white rounded-[32px] w-full h-full overflow-y-auto p-4"
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            >
-
-              {/* 🔥 TAMPILKAN SEMUA GAMBAR */}
+          {/* CONTAINER FLYER */}
+          <div className="bg-black rounded-3xl p-5 shadow-2xl w-full max-w-[450px] md:max-w-[595px] flex justify-center">
+            {/* LAYAR FLYER */}
+            <div className="bg-white rounded-2xl w-full h-auto overflow-y-auto p-4">
               <div className="flex flex-col gap-6">
-
                 {images.map((image, index) => (
                   <img
                     key={index}
@@ -66,15 +45,10 @@ export default function FlyerDesign() {
                     className="w-full h-auto object-contain rounded-xl shadow-md"
                   />
                 ))}
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </div>
   );
