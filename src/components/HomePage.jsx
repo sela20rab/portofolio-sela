@@ -114,18 +114,15 @@ useEffect(() => {
       <div className="absolute top-0 left-0 w-72 h-72 bg-pink-300 rounded-full blur-[120px] opacity-30" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full blur-[140px] opacity-30" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-32 relative z-10">
-        <Navbar />
+<div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-24 md:pt-32 relative z-10">        <Navbar />
 
         {/* ================= HERO ================= */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mt-14 bg-white/40 backdrop-blur-xl rounded-[40px] shadow-2xl p-10 md:p-16 hover:shadow-3xl transition"
-        >
-          <div className="grid md:grid-cols-2 items-center gap-12">
-            {/* LEFT */}
+className="mt-14 bg-white/40 backdrop-blur-xl rounded-[40px] shadow-2xl p-6 md:p-10 lg:p-16"        >
+<div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-12">            {/* LEFT */}
             <motion.div
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
@@ -137,8 +134,7 @@ useEffect(() => {
               </div>
 
               {/* TIDAK MENGUBAH STYLE SAMA SEKALI */}
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                {text1}
+<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">                {text1}
                 <br />
                 <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
                   {text2}
@@ -150,12 +146,10 @@ useEffect(() => {
                 </span>
               </h1>
 
-              <p className="text-gray-600 max-w-lg text-lg">
-                {textP}
+<p className="text-gray-600 max-w-lg text-base md:text-lg">                {textP}
               </p>
 
-              <div className="flex gap-4 pt-4">
-                <button
+<div className="flex flex-col sm:flex-row gap-4 pt-4">                <button
                   onClick={() => navigate("/project")}
                   className="px-8 py-3 rounded-2xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold shadow-lg hover:scale-110 hover:shadow-2xl transition duration-300"
                 >
@@ -177,12 +171,11 @@ useEffect(() => {
               animate="animate"
               className="relative flex justify-center items-center"
             >
-              <div className="absolute w-80 h-96 bg-orange-500 rounded-[229px] rotate-6 shadow-2xl" />
-              <img
-                src={profile}
-                alt="profile"
-                className="relative w-75 rounded-[30px] shadow-2xl hover:scale-105 transition duration-500"
-              />
+<div className="absolute w-[220px] h-[260px] sm:w-[260px] sm:h-[320px] md:w-80 md:h-96 bg-orange-500 rounded-[229px] rotate-6 shadow-2xl" />              <img
+  src={profile}
+  alt="profile"
+  className="relative w-[220px] sm:w-[260px] md:w-[300px] lg:w-[340px] rounded-[30px] shadow-2xl hover:scale-105 transition duration-500"
+/>
 
               {[
   {
@@ -268,8 +261,7 @@ useEffect(() => {
             Technical Writing Projects
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-10">
-
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
             {[{
               img: uat,
               title: "Dokumen UAT",
@@ -333,8 +325,7 @@ useEffect(() => {
     Arsiparis Data
   </h3>
 
-  <div className="grid md:grid-cols-2 gap-8">
-
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
     {/* Arsiparis Data Card */}
     <motion.a
       href="https://drive.google.com/file/d/1vW2IChkTc4Z-yCCFaxBxhf9kxmFdsXwc/view?usp=drive_link"
@@ -377,10 +368,9 @@ useEffect(() => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-28 mb-20 bg-white/40 backdrop-blur-xl rounded-[50px] p-20 text-center shadow-2xl hover:shadow-3xl transition"
+          className="mt-28 mb-20 bg-white/40 backdrop-blur-xl rounded-[50px] p-8 md:p-12 lg:p-20 text-center shadow-2xl hover:shadow-3xl transition"
         >
-          <h2 className="text-5xl font-bold leading-tight">
-            Let’s build something{" "}
+<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">            Let’s build something{" "}
             <span className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
               amazing together.
             </span>

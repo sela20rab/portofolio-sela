@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import profile from "../assets/selablu.jpeg";
 
+import adobe from "../assets/adobe.png";
 import {
   MapPin,
   Clock,
@@ -25,7 +26,6 @@ import {
 import {
   SiCanva,
   SiCoreldraw,
-  SiAdobephotoshop,
   SiXampp,
 } from "react-icons/si";
 
@@ -223,8 +223,10 @@ export default function About() {
               <Tool icon={<FaFigma size={32} className="text-[#A259FF]" />} name="Figma" />
               <Tool icon={<SiCanva size={32} className="text-[#00C4CC]" />} name="Canva" />
               <Tool icon={<SiCoreldraw size={32} className="text-[#3BB54A]" />} name="CorelDraw" />
-              <Tool icon={<SiAdobephotoshop size={32} className="text-[#31A8FF]" />} name="Photoshop" />
-            </div>
+<Tool 
+  icon={<img src={adobe} alt="Adobe Photoshop" className="w-8 h-8 mx-auto" />} 
+  name="Adobe Photoshop" 
+/>            </div>
           </motion.div>
 
           {/* DEVELOPMENT */}
