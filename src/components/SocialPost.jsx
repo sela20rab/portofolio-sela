@@ -23,6 +23,16 @@ import m4 from "../assets/social/m4.png";
 import m5 from "../assets/social/m5.png";
 import m6 from "../assets/social/m6.png";
 
+import iq1 from "../assets/social/iq1.png";
+import iq2 from "../assets/social/iq2.png";
+import iq3 from "../assets/social/iq3.png";
+import iq4 from "../assets/social/iq4.png";
+import iq5 from "../assets/social/iq5.png";
+import iq6 from "../assets/social/iq6.png";
+import iq7 from "../assets/social/iq7.png";
+import iq8 from "../assets/social/iq8.png";
+import iq9 from "../assets/social/iq9.png";
+
 export default function SocialPost() {
 
   const themes = [
@@ -30,6 +40,11 @@ export default function SocialPost() {
       name: "Skincare Beasel",
       images: [s1, s2, s3, s4, s5, s6],
       desc: "Desain social media feed Beasel Skincare dirancang dengan konsep visual yang cerah, bersih, dan modern untuk merepresentasikan produk perawatan kulit yang alami serta berkualitas. Setiap konten menyampaikan informasi penting seperti manfaat produk, kandungan utama skincare, paket perawatan, hingga cara penggunaan yang mudah dipahami oleh audiens. Penggunaan warna biru langit, ilustrasi awan, serta komposisi produk yang menonjol memberikan kesan fresh, natural, dan terpercaya. Selain itu, terdapat juga konten edukatif serta visual transformasi sebelum dan sesudah penggunaan produk yang bertujuan memperkuat pesan bahwa Beasel mampu membantu merawat dan menjaga kesehatan kulit secara efektif.",
+    },
+    {
+      name: "Promoisi Universitas IQSEL",
+      images: [iq1, iq2, iq3, iq4, iq5, iq6, iq7, iq8, iq9],
+      desc: "Desain promosi Universitas IQSEL ini menampilkan konsep visual yang modern, dinamis, dan inspiratif dengan dominasi warna merah yang kuat untuk menciptakan kesan energik, percaya diri, dan profesional. Setiap layout dirancang untuk menonjolkan informasi penting seperti pendaftaran mahasiswa baru, program studi, keunggulan universitas, serta ajakan bergabung bagi calon mahasiswa. Penggunaan elemen mahasiswa sebagai model, tipografi yang tegas, serta komposisi visual yang rapi membantu menyampaikan pesan bahwa IQSEL adalah kampus yang berorientasi pada masa depan dan pengembangan pemimpin muda. Secara keseluruhan, desain ini bertujuan menarik perhatian calon mahasiswa sekaligus membangun citra universitas yang modern, progresif, dan siap mencetak generasi pemimpin masa depan.",
     },
     {
       name: "Food Brand EatSel",
@@ -43,7 +58,7 @@ export default function SocialPost() {
     },
   ];
 
-  const [indices, setIndices] = useState([0, 0, 0]);
+  const [indices, setIndices] = useState([0, 0, 0, 0]);
   const [openIndex, setOpenIndex] = useState(null);
 
   /* ================= AUTO SLIDE ================= */
